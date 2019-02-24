@@ -41,7 +41,7 @@ class knn(object):
         num_train = self.Xtr.shape[0]
         num_test = Xtest.shape[0]
 
-        distances = np.zeros(num_train, num_test)
+        distances = np.zeros((num_train, num_test))
 
         for i in range(num_train):
             for j in range(num_test):
@@ -65,7 +65,7 @@ class knn(object):
         - y_predicted is a numpy 1d array with length num_test containing the predicted labels
         for the input data points where y_predicted[i] is the predicted label for Xtest[i] 
         """
-        num_test = distances.shape[0]
+        num_test = distances.shape[1]
         y_predicted = np.zeros(num_test)
 
         for i in range(num_test):
